@@ -1,0 +1,17 @@
+<div class="card-columns m-5 example-card">
+    <div class="card" *ngFor="let product of this.products">
+      <img [src]="product.imageURL" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text">{{ product.description }}</p>
+        <p class="card-text">{{ product.price }}</p>
+        <span class="badge badge-pill badge-primary">
+          {{product.createdAt}}
+        </span>
+        <p>
+          <button  class="btn btn-primary m-1" [routerLink]="[ 'edit', product._id ]">EDIT</button>
+          <button  class="btn btn-primary m-1" (click)="deleteProduct(product._id)">DELETE</button >
+        </p>
+      </div>
+    </div>
+</div>
